@@ -1,0 +1,287 @@
+/* balões de aniversário via pseudo-elemento */
+body::before {
+  content: "🎈🎉";
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  font-size: 3rem;
+  z-index: 9999;           /* Fica acima do header */
+  pointer-events: none;    /* Não “pega” clique */
+  animation: floatBalloons 6s ease-in-out infinite;
+}
+
+@keyframes floatBalloons {
+  0%,100% { transform: translate(0,0) rotate(0deg); }
+  50%    { transform: translate(-10px,-10px) rotate(15deg); }
+}
+
+/* -------------- Variáveis -------------- */
+:root {
+  --primary: #21325e;
+  --secondary: #e12e33;
+  --light: #f4f4f4;
+  --dark: #333;
+  --white: #fff;
+  --transition: 0.3s ease;
+  --radius: 6px;
+  --font-base: 'Montserrat', sans-serif;
+}
+
+/* -------------- Reset & Base -------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-base);
+  color: var(--dark);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* -------------- Header -------------- */
+.site-header {
+  background: var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.logo img {
+  height: 45px;
+}
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition);
+}
+.menu a:hover {
+  color: var(--secondary);
+}
+
+/* -------------- Hero -------------- */
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: var(--white);
+  padding: 4rem 0;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.6s both;
+}
+.hero p {
+  max-width: 700px;
+  margin: 1rem auto;
+  opacity: 0;
+  animation: fadeInUp 0.6s var(--transition) both;
+}
+.btn-primary {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 2rem;
+  background: var(--white);
+  color: var(--primary);
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* -------------- Separator -------------- */
+.separator {
+  border: none;
+  height: 2px;
+  background: var(--light);
+  margin: 2rem 0;
+}
+
+/* -------------- Vídeo -------------- */
+.video-section {
+  background: var(--light);
+  padding: 3rem 0;
+  text-align: center;
+}
+.video-section h2 {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+.video-container video {
+  width: 100%;
+  max-width: 720px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform var(--transition);
+}
+.video-container video:hover {
+  transform: scale(1.02);
+}
+
+/* -------------- Contato -------------- */
+.contact {
+  padding: 3rem 0;
+}
+.contact h2 {
+  color: var(--primary);
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+.contact p {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.perfil-select {
+  display: block;
+  margin: 0 auto 2rem;
+  padding: 0.6rem;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 300px;
+  transition: border var(--transition);
+}
+.perfil-select:focus {
+  border-color: var(--primary);
+}
+
+.fields {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.fields.active {
+  display: flex;
+  opacity: 1;
+}
+.fields input,
+.fields select,
+.fields textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  transition: border var(--transition), box-shadow var(--transition);
+}
+.fields input:focus,
+.fields select:focus,
+.fields textarea:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 5px rgba(225,46,51,0.3);
+}
+
+.btn-submit {
+  display: block;
+  margin: 1.5rem auto 0;
+  padding: 0.75rem 2rem;
+  background: var(--secondary);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter var(--transition), transform var(--transition);
+}
+.btn-submit:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.success {
+  text-align: center;
+  color: green;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+/* -------------- Footer -------------- */
+.site-footer {
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+/* -------------- Animações -------------- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------- Responsividade -------------- */
+@media (min-width: 768px) {
+  .header-inner { padding: 0; }
+}
+
+/* sub-footer */
+.sub-footer {
+  background: #21325e;
+  color: #ccc;
+  text-align: center;
+  padding: 0.75rem 0;
+  font-size: 0.8rem;
+}
+.sub-footer p {
+  margin: 0.25rem 0;
+  line-height: 1.4;
+}
+/* countdown */
+.countdown {
+  background: #21325e;
+  color: var(--white);
+  text-align: center;
+  padding: 2rem 0;
+}
+.countdown h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.2rem;
+}
+.timer div {
+  background: rgba(255,255,255,0.2);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
+}
+.timer span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.timer small {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.75rem;
+}
