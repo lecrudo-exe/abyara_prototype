@@ -285,3 +285,103 @@ body {
   margin-top: 0.2rem;
   font-size: 0.75rem;
 }
+/* ————————— existing styles and media queries ————————— */
+
+/* ======================
+   Ajustes Gerais Mobile
+   ====================== */
+@media (max-width: 768px) {
+  /* 1) Esconder ou reduzir as decorações para não cortarem o conteúdo */
+  body::before,
+  body::after {
+    font-size: 2rem;       /* menos intrusivo */
+    top: 0.5rem; right: 0.5rem;
+    bottom: 0.5rem; left: 0.5rem;
+  }
+
+  /* 2) Header em coluna e menu “empilhado” */
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .menu ul {
+    flex-direction: column;
+    width: 100%;
+    background: var(--primary);
+    padding: 0.5rem 0;
+  }
+  .menu ul li {
+    margin: 0.3rem 0;
+  }
+
+  /* 3) Hero / texto centralizado e espaçamento ajustado */
+  .hero {
+    padding: 3rem 1rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  /* 4) Countdown: itens em duas colunas para caber melhor */
+  .timer {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .timer div {
+    flex: 1 1 45%;
+    padding: 0.75rem;
+  }
+
+  /* 5) Vídeo e formulário fluidos */
+  .video-container video {
+    max-width: 100%;
+  }
+  .container {
+    width: 95%;
+  }
+  .perfil-select,
+  .fields input,
+  .fields select,
+  .fields textarea,
+  .btn-submit {
+    width: 100%;
+  }
+}
+/* ————————— Ajustes finais ————————— */
+
+/* 1) Garante que o balão nunca “escape” da viewport */
+body {
+  overflow-x: hidden; /* esconde qualquer sobra horizontal */
+}
+body::before {
+  content: "🎈🎉";
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  transform: translateX(-100%);  /* puxa o balão totalmente para dentro */
+  font-size: 3rem;
+  z-index: 9999;
+  pointer-events: none;
+  /* animation: floatBalloons 6s ease-in-out infinite;  // opcional: comente se quiser deixar estático */
+}
+
+/* 2) Faz com que “Fale Conosco” não quebre linha no mobile e centraliza tudo */
+@media (max-width: 768px) {
+  .menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 0;
+  }
+  .menu a {
+    display: block;
+    width: auto;
+    text-align: center;
+    white-space: nowrap;   /* não permite quebra de linha */
+    padding: 0.5rem 1rem;
+  }
+}
