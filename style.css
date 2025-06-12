@@ -1,20 +1,3 @@
-/* balões de aniversário via pseudo-elemento */
-body::before {
-  content: "🎈🎉";
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  font-size: 3rem;
-  z-index: 9999;           /* Fica acima do header */
-  pointer-events: none;    /* Não “pega” clique */
-  animation: floatBalloons 6s ease-in-out infinite;
-}
-
-@keyframes floatBalloons {
-  0%,100% { transform: translate(0,0) rotate(0deg); }
-  50%    { transform: translate(-10px,-10px) rotate(15deg); }
-}
-
 /* -------------- Variáveis -------------- */
 :root {
   --primary: #21325e;
@@ -351,23 +334,7 @@ body {
     width: 100%;
   }
 }
-/* ————————— Ajustes finais ————————— */
 
-/* 1) Garante que o balão nunca “escape” da viewport */
-body {
-  overflow-x: hidden; /* esconde qualquer sobra horizontal */
-}
-body::before {
-  content: "🎈🎉";
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  transform: translateX(-100%);  /* puxa o balão totalmente para dentro */
-  font-size: 3rem;
-  z-index: 9999;
-  pointer-events: none;
-  /* animation: floatBalloons 6s ease-in-out infinite;  // opcional: comente se quiser deixar estático */
-}
 
 /* 2) Faz com que “Fale Conosco” não quebre linha no mobile e centraliza tudo */
 @media (max-width: 768px) {
@@ -384,4 +351,75 @@ body::before {
     white-space: nowrap;   /* não permite quebra de linha */
     padding: 0.5rem 1rem;
   }
+}
+/* =============================
+   AJUSTES PARA SEÇÕES MENOR
+   ============================= */
+
+/* Hero */
+.hero {
+  padding: 2rem 0;                 /* antes: 4rem */
+}
+.hero h1 {
+  font-size: 2.2rem;               /* antes: 2.8rem */
+}
+.hero p {
+  font-size: 1rem;                 /* antes: default */
+}
+.btn-primary {
+  padding: 0.5rem 1.2rem;          /* antes: 0.75rem 2rem */
+  font-size: 0.9rem;
+}
+
+/* Countdown */
+.countdown {
+  padding: 1rem 0;                 /* antes: 2rem */
+}
+.countdown h2 {
+  font-size: 1.4rem;               /* antes: 1.8rem */
+}
+.timer {
+  gap: 1rem;                       /* antes: 2rem */
+  font-size: 1rem;                 /* antes: 1.2rem */
+}
+.timer span {
+  font-size: 1.6rem;               /* antes: 2rem */
+}
+.timer small {
+  font-size: 0.7rem;               /* antes: 0.75rem */
+}
+
+/* Vídeo */
+.video-section {
+  padding: 2rem 0;                 /* antes: 3rem */
+}
+.video-section h2 {
+  font-size: 1.6rem;               /* antes: 1.8rem */
+}
+.video-container video {
+  max-width: 640px;                /* antes: 720px */
+}
+
+/* Contato */
+.contact {
+  padding: 2rem 0;                 /* antes: 3rem */
+}
+.contact h2 {
+  font-size: 1.6rem;               /* antes: 1.8rem */
+}
+.contact p {
+  font-size: 0.9rem;
+}
+.perfil-select {
+  max-width: 250px;                /* antes: 300px */
+}
+.fields input,
+.fields select,
+.fields textarea {
+  font-size: 0.9rem;
+  padding: 0.6rem;
+}
+.btn-submit {
+  padding: 0.6rem 1.5rem;
+  font-size: 0.9rem;
 }
