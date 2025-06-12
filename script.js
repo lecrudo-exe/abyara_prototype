@@ -57,12 +57,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Inicia AOS
 AOS.init({ duration: 800, once: true });
-
-// Dispara confete leve ao abrir a página
-window.addEventListener('load', () => {
-  confetti({
-    particleCount: 100,
-    spread: 60,
-    origin: { y: 0.2 }
-  });
-});
