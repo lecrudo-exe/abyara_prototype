@@ -3,150 +3,216 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>30 Anos Abyara – Celebrando 30 Anos de Excelência</title>
   <meta name="description"
     content="Celebre conosco nosso aniversário de 30 anos! Conheça nossa história, assista ao vídeo e fale com a gente." />
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <!-- Header fixo -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="#" class="logo">
         <img src="LOGO.svg" alt="Abyara Quantum" />
       </a>
-
-      <!-- botão hambúrguer -->
       <button class="hamburger" aria-label="Abrir menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
-
       <nav class="menu">
         <ul>
           <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#features">Nossos Serviços</a></li>
+          <li><a href="#testimonials">Depoimentos</a></li>
           <li><a href="#video">Vídeo</a></li>
-          <li><a href="#contato">Fale Conosco</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Contador Regressivo -->
-  <section id="countdown" class="countdown">
+  <!-- Hero full-screen -->
+  <section id="sobre" class="hero">
     <div class="container">
-      <h2>Faltam para nossos 30 Anos!</h2>
-      <div class="timer">
-        <div><span id="days">00</span><small>DIAS</small></div>
-        <div><span id="hours">00</span><small>HORAS</small></div>
-        <div><span id="minutes">00</span><small>MIN</small></div>
-        <div><span id="seconds">00</span><small>SEG</small></div>
+      <div class="hero-header">
+        <div class="hero-line"></div>
+        <span class="hero-subtitle">TRADIÇÃO E EXCELÊNCIA</span>
+        <div class="hero-line"></div>
       </div>
+
+      <h1>30 Anos de História</h1>
+
+      <p>
+        Três décadas construindo sonhos e transformando vidas.
+        Celebramos nossa trajetória de sucesso com orgulho e gratidão,
+        sempre mantendo o compromisso com a qualidade e inovação
+        que nos tornaram referência no mercado imobiliário de alto padrão.
+      </p>
+
+      <div class="hero-dates">
+        <span class="year">1995</span>
+        <span class="dash">—</span>
+        <span class="year">2025</span>
+      </div>
+
+      <a href="#video" class="btn-primary">Assista ao Vídeo</a>
+    </div>
+  </section>
+
+  <!-- …já dentro do <main>, logo abaixo de #sobre… -->
+
+  <section id="equipe" class="team">
+    <div class="container">
+      <h2>Nossa Equipe</h2>
+      <!-- substitua o src pelo caminho da sua imagem -->
+      <img src="WhatsApp Image 2025-06-16 at 12.05.09.jpeg" alt="Equipe Abyara Quantum" />
+      <p>
+        Somos uma equipe multidisciplinar comprometida com a excelência em todas as etapas dos nossos projetos.
+        Há 30 anos unimos experiência, inovação e paixão pelo desenvolvimento imobiliário de alto padrão.
+      </p>
     </div>
   </section>
 
 
-  <main>
-    <!-- Seção Sobre / Institucional -->
-    <section id="sobre" class="hero">
-      <div class="container">
-        <h1>30 Anos de História e Inovação</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.
-          Cras venenatis euismod malesuada.</p>
-        <p>Proin sit amet tristique augue. Sed nec ultricies orci. Vivamus suscipit, velit at fermentum venenatis, nisi
-          urna iaculis ligula, a commodo purus nisl non eros.</p>
-        <p>Fusce quis sem sit amet mauris rhoncus fermentum. Praesent ultrices urna in sapien pellentesque, in luctus
-          felis ornare. Nulla facilisi.</p>
-        <a href="#video" class="btn-primary">Assistir ao Vídeo</a>
-      </div>
-    </section>
-
-    <hr class="separator" />
-
-    <!-- Seção Vídeo -->
-    <section id="video" class="video-section">
-      <div class="container">
-        <h2>Vídeo Comemorativo</h2>
-        <div class="video-container">
-          <video controls poster="#" preload="metadata">
-            <source src="#" type="video/mp4" />
-            Seu navegador não suporta vídeo HTML5.
-          </video>
+  <!-- Seção de Serviços -->
+  <section id="features" class="features">
+    <div class="container">
+      <div class="grid">
+        <div class="feature-card">
+          <h3>Consultoria Especializada</h3>
+          <p>Análise e apoio estratégico para incorporadores de alto padrão, garantindo máxima rentabilidade e
+            eficiência.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Projetos Personalizados</h3>
+          <p>Desenvolvimento de empreendimentos exclusivos, com atenção total ao design, ao conforto e à
+            sustentabilidade.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Gestão Completa</h3>
+          <p>Supervisão integral de todas as etapas — da aquisição do terreno à entrega das chaves — com transparência e
+            rigor.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <hr class="separator" />
-
-    <!-- Seção Formulário -->
-    <section id="contato" class="contact">
-      <div class="container">
-        <h2>Fale Conosco</h2>
-        <p>Escolha seu perfil e preencha os dados abaixo:</p>
-        <select id="tipo" name="tipo" class="perfil-select">
-          <option value="">— Quem é você? —</option>
-          <option value="corretor">Corretor</option>
-          <option value="incorporador">Incorporador</option>
-          <option value="cliente">Cliente Final</option>
-        </select>
-
-        <form id="contact-form">
-          <div class="fields corretor">
-            <input type="text" name="nome" placeholder="Nome completo" required />
-            <input type="email" name="email" placeholder="E-mail" required />
-            <input type="tel" name="telefone" placeholder="Telefone" required />
-            <textarea name="mensagem" placeholder="Mensagem" rows="4" required></textarea>
+  <!-- Depoimentos / Carousel -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <h2>O que dizem nossos parceiros</h2>
+      <div class="carousel" id="testimonialsCarousel">
+        <button class="carousel-control prev">‹</button>
+        <div class="carousel-track">
+          <div class="carousel-slide testimonial-card">
+            <p>“Trabalhar com a Abyara foi um divisor de águas: know-how e entregas sempre no prazo.”</p>
+            <p class="author">— João Carvalho, Incorporador</p>
           </div>
-
-          <div class="fields incorporador">
-            <input type="text" name="empresa" placeholder="Nome da empresa" required />
-            <input type="text" name="contato" placeholder="Nome do contato" required />
-            <input type="email" name="email" placeholder="E-mail" required />
-            <input type="tel" name="telefone" placeholder="Telefone" required />
-            <textarea name="mensagem" placeholder="Mensagem" rows="4" required></textarea>
+          <div class="carousel-slide testimonial-card">
+            <p>“Equipe altamente qualificada e atendimento impecável. Recomendo a todos os corretores.”</p>
+            <p class="author">— Maria Silva, Corretora</p>
           </div>
-
-          <div class="fields cliente">
-            <input type="text" name="nome" placeholder="Nome completo" required />
-            <input type="email" name="email" placeholder="E-mail" required />
-            <input type="tel" name="telefone" placeholder="Telefone" required />
-            <select name="interesse" required>
-              <option value="">Interesse</option>
-              <option value="compra">Compra de imóvel</option>
-              <option value="duvidas">Dúvidas gerais</option>
-            </select>
-            <textarea name="mensagem" placeholder="Mensagem" rows="4" required></textarea>
+          <div class="carousel-slide testimonial-card">
+            <p>“Parceria de confiança: inovam sem perder o foco na qualidade e no cliente.”</p>
+            <p class="author">— Ricardo Mendes, Cliente Final</p>
           </div>
+        </div>
+        <button class="carousel-control next">›</button>
+      </div>
+    </div>
+  </section>
 
-          <button type="submit" class="btn-submit">Enviar</button>
-        </form>
+  <!-- Vídeo Comemorativo -->
+  <section id="video" class="video-section">
+    <div class="container">
+      <h2>Vídeo Comemorativo</h2>
+      <div class="video-container">
+        <video controls poster="#" preload="metadata">
+          <source src="#" type="video/mp4" />
+          Seu navegador não suporta vídeo HTML5.
+        </video>
+      </div>
+    </div>
+  </section>
 
-        <div id="success-message" class="success" hidden>
-          Sua mensagem foi enviada com sucesso! Entraremos em contato em breve.
+  <!-- Seção Contato com Abas -->
+  <section id="contato" class="contact">
+    <div class="container">
+      <h2>Fale Conosco</h2>
+      <p>Selecione seu perfil para um atendimento personalizado</p>
+
+      <!-- Abas -->
+      <div class="tabs">
+        <button class="tab active" data-target="cliente">Cliente</button>
+        <button class="tab" data-target="incorporador">Incorporador</button>
+        <button class="tab" data-target="corretor">Corretor</button>
+      </div>
+
+      <!-- Conteúdos das abas -->
+      <div class="tab-contents">
+        <div id="cliente" class="tab-content active">
+          <form>
+            <div class="grid-form">
+              <div class="form-group"><label for="cli-nome">Nome</label><input id="cli-nome" type="text"
+                  placeholder="Seu nome" /></div>
+              <div class="form-group"><label for="cli-email">E-mail</label><input id="cli-email" type="email"
+                  placeholder="seu@email.com" /></div>
+              <div class="form-group"><label for="cli-tel">Telefone</label><input id="cli-tel" type="tel"
+                  placeholder="(00) 0000-0000" /></div>
+              <div class="form-group full"><label for="cli-msg">Mensagem</label><textarea id="cli-msg" rows="4"
+                  placeholder="Escreva sua mensagem"></textarea></div>
+            </div>
+            <button type="submit" class="btn-submit">Enviar Mensagem</button>
+          </form>
+        </div>
+        <div id="incorporador" class="tab-content">
+          <form>
+            <div class="grid-form">
+              <div class="form-group"><label for="inc-empresa">Empresa</label><input id="inc-empresa" type="text"
+                  placeholder="Nome da empresa" /></div>
+              <div class="form-group"><label for="inc-contato">Contato</label><input id="inc-contato" type="text"
+                  placeholder="Nome do contato" /></div>
+              <div class="form-group"><label for="inc-email">E-mail</label><input id="inc-email" type="email"
+                  placeholder="seu@email.com" /></div>
+              <div class="form-group"><label for="inc-tel">Telefone</label><input id="inc-tel" type="tel"
+                  placeholder="(00) 0000-0000" /></div>
+              <div class="form-group full"><label for="inc-msg">Mensagem</label><textarea id="inc-msg" rows="4"
+                  placeholder="Escreva sua mensagem"></textarea></div>
+            </div>
+            <button type="submit" class="btn-submit">Enviar Mensagem</button>
+          </form>
+        </div>
+        <div id="corretor" class="tab-content">
+          <form>
+            <div class="grid-form">
+              <div class="form-group"><label for="cor-nome">Nome</label><input id="cor-nome" type="text"
+                  placeholder="Seu nome" /></div>
+              <div class="form-group"><label for="cor-creci">CRECI</label><input id="cor-creci" type="text"
+                  placeholder="Número do CRECI" /></div>
+              <div class="form-group"><label for="cor-email">E-mail</label><input id="cor-email" type="email"
+                  placeholder="seu@email.com" /></div>
+              <div class="form-group"><label for="cor-imo">Imobiliária</label><input id="cor-imo" type="text"
+                  placeholder="Nome da imobiliária" /></div>
+            </div>
+            <button type="submit" class="btn-submit">Cadastrar na Rede</button>
+          </form>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <!-- sub-footer: fale rodapé -->
-      <div class="sub-footer">
-        <div class="container">
-          <p>Fale Conosco: (11) 4000-0000 | contato@abyara.com.br | Av. Exemplo, 1234 – São Paulo/SP</p>
-          <p>CNPJ: 12.345.678/0001-99 | © 2025 Abyara Quantum – Todos os direitos reservados.</p>
-          <p>Termos de Uso, Política de Privacidade e Aviso Legal disponíveis mediante solicitação.</p>
-        </div>
-      </div>
-
+      <p>Fale Conosco: (11) 4000-0000 | contato@abyara.com.br</p>
+      <p>Av. Exemplo, 1234 — São Paulo/SP</p>
+      <p>CNPJ: 12.345.678/0001-99 | © 2025 Abyara Quantum — Todos os direitos reservados.</p>
+      <p><a href="#">Termos de Uso</a> | <a href="#">Política de Privacidade</a> | <a href="#">Aviso Legal</a></p>
     </div>
   </footer>
-
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 
 </html>
