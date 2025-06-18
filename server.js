@@ -9,24 +9,22 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// configura o transporte SMTP
 const transporter = nodemailer.createTransport({
   host: 'smtp.skymail.net.br',
   port: 465,
-  secure: true, // usa SSL
+  secure: true,
   auth: {
     user: 'abyara@abyaraquantum.com.br',
     pass: 'Qntm#2025!'
   }
 });
 
-// rota para cadastro de corretores
-app.post('/api/corretor', async (req, res) => {
+// rota Corretores
+app.post('/api/corretor', (req, res) => {
   const { nome, creci, email, imobiliaria } = req.body;
-
   const mailOptions = {
     from: '"Abyara Quantum" <abyara@abyaraquantum.com.br>',
-    to: 'gente@abyara.com.br',
+    to:   'gente@abyara.com.br',
     subject: 'Novo cadastro de Corretor',
     html: `
       <h2>Novo Cadastro de Corretor</h2>
@@ -36,17 +34,33 @@ app.post('/api/corretor', async (req, res) => {
       <p><strong>Imobiliária:</strong> ${imobiliaria}</p>
     `
   };
+  transporter.sendMail(mailOptions, (err, info) => {
+    if (err) return res.status(500).json({ sucesso: false, erro: err.toString() });
+    res.json({ sucesso: true });
+  });
+});
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error('Erro ao enviar e-mail:', error);
-      return res.status(500).json({ sucesso: false, erro: error.toString() });
-    }
+// rota Incorporadores
+app.post('/api/incorporador', (req, res) => {
+  const { empresa, contato, email, telefone, mensagem } = req.body;
+  const mailOptions = {
+    from: '"Abyara Quantum" <abyara@abyaraquantum.com.br>',
+    to:   'novosnegocios@abyara.com.br',
+    subject: 'Novo cadastro de Incorporador',
+    html: `
+      <h2>Novo Cadastro de Incorporador</h2>
+      <p><strong>Empresa:</strong> ${empresa}</p>
+      <p><strong>Contato:</strong> ${contato}</p>
+      <p><strong>E-mail:</strong> ${email}</p>
+      <p><strong>Telefone:</strong> ${telefone}</p>
+      <p><strong>Mensagem:</strong><br/>${mensagem}</p>
+    `
+  };
+  transporter.sendMail(mailOptions, (err, info) => {
+    if (err) return res.status(500).json({ sucesso: false, erro: err.toString() });
     res.json({ sucesso: true });
   });
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
-});
+app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
