@@ -299,3 +299,27 @@ body { font-family:var(--font-base); color:var(--dark); background:var(--light-b
 .btn-primary {
   margin-top: 1rem;
 }
+/* === Ajustes para leadersCarousel responsivo === */
+.carousel-slide {
+  padding: 0 1rem; /* diminui o padding nas laterais em telas pequenas */
+}
+
+.carousel-slide img.leader-photo {
+  display: block;
+  width: 100%;       /* ocupa toda a largura disponível */
+  max-width: 600px;  /* mantém o limite em desktop */
+  height: auto;      /* preserva proporção */
+  margin: 0 auto 1rem;
+  border-radius: 10%;
+}
+
+/* Em telas menores que 768px, elimina o max-width para ficar totalmente fluido */
+@media (max-width: 768px) {
+  .carousel-slide img.leader-photo {
+    max-width: 100%;
+  }
+  /* Se quiser, ainda pode reduzir o padding horizontal */
+  .carousel-slide {
+    padding: 0 0.5rem;
+  }
+}
