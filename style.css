@@ -105,6 +105,40 @@ body { font-family:var(--font-base); color:var(--dark); background:var(--light-b
 }
 .carousel-control.prev { left:1rem; }
 .carousel-control.next { right:1rem; }
+/* Aplica aos carrosséis existentes e ao novo #leadersCarousel */
+.carousel-slide img.leader-photo {
+  display: block;
+  margin: 0 auto 1rem;
+  max-width: 600px;
+  border-radius: 10%;
+}
+
+/* Descrição do líder */
+.carousel-slide .description {
+  font-style: normal;
+  color: #444;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+/* Nome do líder */
+.carousel-slide .leader-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0.5rem 0 0.25rem;
+}
+
+/* Cargo do líder */
+.carousel-slide .leader-role {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  margin: 0 0 1rem;
+  font-style: italic;
+}
+
+/* Reaproveite todo o CSS de .testimonials e .carousel-control já definido */
 
 /* Contato (Abas + Formulários) */
 .contact { padding:4rem 0; background:var(--light-bg); text-align:center; }
