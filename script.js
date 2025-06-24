@@ -42,18 +42,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // — 2) Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      const el = document.querySelector(a.getAttribute('href'));
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      if (hamburger.classList.contains('active')) {
-        hamburger.classList.remove('active');
-        menu.classList.remove('active');
-      }
-    });
+ // — 2) Smooth scroll com offset para header fixo
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const targetID = a.getAttribute('href');
+    const el = document.querySelector(targetID);
+    if (el) {
+      const headerHeight = document.querySelector('.site-header').offsetHeight;
+      const elTop = el.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: elTop - headerHeight,
+        behavior: 'smooth'
+      });
+    }
+    // fecha menu mobile, se estiver aberto
+    if (hamburger.classList.contains('active')) {
+      hamburger.classList.remove('active');
+      menu.classList.remove('active');
+    }
   });
+});
+
 
   // — 3) Abas de formulário
   const tabs     = document.querySelectorAll('.tab');

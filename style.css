@@ -1,3 +1,14 @@
+/* faz qualquer seção com id rolar 60px acima para não ficar escondida atrás do header */
+section[id] {
+  scroll-margin-top: 60px;
+}
+
+html {
+  /* Garante 60px de folga para qualquer alvo de âncora */
+  scroll-padding-top: 60px;
+}
+
+
 :root {
   --primary: #21325e;
   --accent:  #5052d4;
@@ -216,7 +227,9 @@ body { font-family:var(--font-base); color:var(--dark); background:var(--light-b
    =================== */
 .team {
   background: var(--light);
-  padding: 3rem 0;
+  /* pega seu padding original de cima (3rem) e soma mais 60px */
+  padding-top: calc(3rem + 60px);
+  padding-bottom: 3rem;
   text-align: center;
 }
 .team h2 {
